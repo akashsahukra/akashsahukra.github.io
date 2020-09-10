@@ -13,6 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script  src="js/scroll.js"></script>
+  <script src="js/send.js"></script>
 
 </head>
 <body>
@@ -93,13 +94,13 @@ My goal is to be a data-scientist, My short term goal is to buy a brand new MINI
           <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
         </div>
         <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+          <input class="form-control" id="email" name="email" placeholder="Subject" type="text" required>
         </div>
       </div>
       <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
       <div class="row">
         <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
+          <button class="btn btn-default pull-right" type="submit" onclick="sendMail()">Send</button>
         </div>
       </div>
     </div>
@@ -118,7 +119,7 @@ My goal is to be a data-scientist, My short term goal is to buy a brand new MINI
   <a href="https://in.linkedin.com/in/akash-sahukara-36258517b" target="_blank"  class="fa fa-linkedin"></a>
   <a href="mailto:akashsahukara@gmail.com" target="_blank" class="fa fa-google"></a>
   <a href="https://github.com/akashsahukra" target="_blank" class="fa fa-github"></a>
-  <p style="padding:7em 0 0 0;">Copyright &#169 2020 Akash, Inc.</p>
+  <p>Copyright &#169 2020 Akash, Inc.</p>
 </footer>
 
 </body>

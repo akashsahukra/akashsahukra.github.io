@@ -119,4 +119,7 @@ iframe{
   overflow: hidden;
 
 }
-
+footer p{
+  position : relative;
+  top : 70px;
+}

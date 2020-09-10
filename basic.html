@@ -9,25 +9,33 @@
             text-align:center;
             color : red;
             font-size : 50px;
-            position  : fixed;
+            position  : relative;
             z-index : 1;
         }
-        .img{
-            background: url("https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif");
-            height : 20em;
-            width : 20em;
-            transform:rotate(40deg);
+        body{
+            background: url("images/bridge.jpeg");
+        
+            /* transform:rotate(90deg); */
+        }
+        div{
+            border: 2px solid red;
+            height : 50em;
+            width : 50em;
+            background : orange;
+            opacity : 0.5
+        }
+        p{
+            color : white;
+            opacity : 1;
         }
         
         
     </style>
 </head>
 <body>
-    <div class="demo">
-        <p>Hi</p>
-        <div class="img">
-
-        </div>
+    <div>
+        <p id="hi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium labore sint, incidunt saepe est voluptas beatae in quis iure sed minima eaque excepturi quod dolore dignissimos quas ducimus quidem nulla.</p>
     </div>
+    
 </body>
 </html>
