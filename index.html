@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akash Sahukara | Senior Software Engineer</title>
+  <meta name="description" content="Interactive developer portfolio of Akash Sahukara, Senior Software Engineer at Rakuten. Experienced in Spring Boot, Kafka, Couchbase, microservices, and event-driven architectures.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="theme-dracula">
+
+  <!-- Desktop Environment Wrapper (resembling a clean workspace) -->
+  <div class="desktop-container">
+    
+    <!-- VS Code Window -->
+    <div class="vscode-window" id="vscode-window">
+      
+      <!-- 1. Title Bar (Window Controls & Menu) -->
+      <header class="window-titlebar">
+        <div class="titlebar-left">
+          <div class="window-logo">
+            <svg class="vscode-icon" viewBox="0 0 24 24" width="16" height="16">
+              <path fill="#007ACC" d="M23.9 6.5l-3.3-3.3c-.2-.2-.6-.2-.8 0L12 11.1 5.3 4.4c-.2-.2-.6-.2-.8 0L1.2 7.7c-.2.2-.2.6 0 .8L6 12l-4.8 3.5c-.2.2-.2.6 0 .8l3.3 3.3c.2.2.6.2.8 0L12 12.9l6.7 6.7c.2.2.6.2.8 0l3.3-3.3c.2-.2.2-.6 0-.8L18 12l4.8-3.5c.2-.2.2-.6 0-.8z"/>
+            </svg>
+          </div>
+          
+          <nav class="window-menu">
+            <span class="menu-item">File</span>
+            <span class="menu-item">Edit</span>
+            <span class="menu-item">Selection</span>
+            <span class="menu-item">View</span>
+            <span class="menu-item">Go</span>
+            <span class="menu-item">Run</span>
+            <span class="menu-item">Terminal</span>
+            <span class="menu-item">Help</span>
+          </nav>
+        </div>
+        
+        <div class="titlebar-center">
+          <span class="title-text">akash-sahukara-portfolio - Visual Studio Code</span>
+        </div>
+        
+        <div class="titlebar-right">
+          <div class="window-controls">
+            <button class="control-btn minimize" aria-label="Minimize"><i class="fa-solid fa-minus"></i></button>
+            <button class="control-btn maximize" aria-label="Maximize"><i class="fa-regular fa-square"></i></button>
+            <button class="control-btn close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </div>
+      </header>
+
+      <!-- 2. Main Workspace -->
+      <main class="window-workspace">
+        
+        <!-- Activity Bar (Leftmost Strip) -->
+        <aside class="activity-bar">
+          <div class="activity-top">
+            <button class="activity-btn active" id="btn-explorer" title="Explorer (Ctrl+Shift+E)">
+              <i class="fa-regular fa-copy"></i>
+              <span class="badge" id="badge-explorer">5</span>
+            </button>
+            <button class="activity-btn" id="btn-search" title="Search (Ctrl+Shift+F)">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button class="activity-btn" id="btn-git" title="Source Control (Ctrl+Shift+G)">
+              <i class="fa-solid fa-code-branch"></i>
+              <span class="badge" id="badge-git">26</span>
+            </button>
+            <button class="activity-btn" id="btn-projects" title="Projects Showcase">
+              <i class="fa-solid fa-laptop-code"></i>
+            </button>
+          </div>
+          <div class="activity-bottom">
+            <button class="activity-btn" id="btn-profile" title="About Akash">
+              <i class="fa-regular fa-user"></i>
+            </button>
+            <button class="activity-btn" id="btn-settings" title="Settings">
+              <i class="fa-solid fa-gear"></i>
+            </button>
+          </div>
+        </aside>
+
+        <!-- Sidebar (File Explorer Panel) -->
+        <aside class="sidebar-panel" id="sidebar-panel">
+          <div class="sidebar-header">
+            <span>EXPLORER</span>
+            <div class="sidebar-actions">
+              <button title="New File" id="sidebar-new-file"><i class="fa-solid fa-file-circle-plus"></i></button>
+              <button title="Collapse Folders All" id="sidebar-collapse"><i class="fa-solid fa-folder-minus"></i></button>
+            </div>
+          </div>
+          
+          <div class="explorer-container">
+            <!-- Open Editors Section -->
+            <div class="explorer-section open-editors">
+              <div class="section-title">
+                <i class="fa-solid fa-chevron-down section-arrow"></i>
+                <span>OPEN EDITORS</span>
+              </div>
+              <ul class="section-content" id="open-editors-list">
+                <!-- Dynamically populated -->
+              </ul>
+            </div>
+
+            <!-- Workspace Directory Section -->
+            <div class="explorer-section workspace-dir">
+              <div class="section-title">
+                <i class="fa-solid fa-chevron-down section-arrow"></i>
+                <span class="dir-name">MYPORTFOLIO</span>
+              </div>
+              <ul class="section-content folder-tree">
+                
+                <!-- info folder -->
+                <li class="tree-item folder closed" data-path="info">
+                  <span class="tree-label"><i class="fa-solid fa-chevron-right folder-arrow"></i><i class="fa-solid fa-folder folder-icon"></i> info</span>
+                  <ul class="tree-sub">
+                    <li class="tree-item file" data-file="about_me.md" data-path="info/about_me.md">
+                      <span class="tree-label"><i class="fa-brands fa-markdown file-icon md-icon"></i> about_me.md</span>
+                    </li>
+                  </ul>
+                </li>
+                
+                <!-- skills folder -->
+                <li class="tree-item folder" data-path="skills">
+                  <span class="tree-label"><i class="fa-solid fa-chevron-down folder-arrow"></i><i class="fa-solid fa-folder-open folder-icon"></i> skills</span>
+                  <ul class="tree-sub">
+                    <li class="tree-item file" data-file="skills.json" data-path="skills/skills.json">
+                      <span class="tree-label"><i class="fa-solid fa-braces file-icon json-icon"></i> skills.json</span>
+                    </li>
+                  </ul>
+                </li>
+                
+                <!-- career folder -->
+                <li class="tree-item folder" data-path="career">
+                  <span class="tree-label"><i class="fa-solid fa-chevron-down folder-arrow"></i><i class="fa-solid fa-folder-open folder-icon"></i> career</span>
+                  <ul class="tree-sub">
+                    <li class="tree-item file" data-file="experience.yaml" data-path="career/experience.yaml">
+                      <span class="tree-label"><i class="fa-solid fa-gears file-icon yaml-icon"></i> experience.yaml</span>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- projects folder -->
+                <li class="tree-item folder" data-path="projects">
+                  <span class="tree-label"><i class="fa-solid fa-chevron-down folder-arrow"></i><i class="fa-solid fa-folder-open folder-icon"></i> projects</span>
+                  <ul class="tree-sub">
+                    <li class="tree-item file" data-file="github_repos.js" data-path="projects/github_repos.js">
+                      <span class="tree-label"><i class="fa-brands fa-js file-icon js-icon"></i> github_repos.js</span>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- contact folder -->
+                <li class="tree-item folder closed" data-path="contact">
+                  <span class="tree-label"><i class="fa-solid fa-chevron-right folder-arrow"></i><i class="fa-solid fa-folder folder-icon"></i> contact</span>
+                  <ul class="tree-sub">
+                    <li class="tree-item file" data-file="contact_me.sh" data-path="contact/contact_me.sh">
+                      <span class="tree-label"><i class="fa-solid fa-terminal file-icon sh-icon"></i> contact_me.sh</span>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- Root-level Files -->
+                <li class="tree-item file" data-file="Akash_Sahukara-SE.pdf" data-path="Akash_Sahukara-SE.pdf">
+                  <span class="tree-label"><i class="fa-solid fa-file-pdf file-icon pdf-icon"></i> Akash_Sahukara-SE.pdf</span>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Editor & Panels Container -->
+        <section class="editor-panel-container">
+          
+          <!-- Editor Group (Top Half) -->
+          <div class="editor-group" id="editor-group">
+            
+            <!-- Editor Tabs Bar -->
+            <div class="editor-tabs-container">
+              <div class="tabs-scroll-area" id="tabs-container">
+                <!-- Dynamically populated tabs -->
+              </div>
+              <div class="editor-actions">
+                <button id="btn-toggle-preview" class="editor-action-btn" title="Toggle Preview (Markdown/Visual)">
+                  <i class="fa-solid fa-book-open"></i> <span>Preview</span>
+                </button>
+                <button id="btn-split-editor" class="editor-action-btn" title="Split Editor"><i class="fa-solid fa-columns"></i></button>
+                <button id="btn-more-actions" class="editor-action-btn" title="More Actions"><i class="fa-solid fa-ellipsis"></i></button>
+              </div>
+            </div>
+
+            <!-- Active Editor Area -->
+            <div class="editor-content-area" id="editor-content-area">
+              
+              <!-- Left: Line Numbers -->
+              <div class="line-numbers" id="line-numbers-container">
+                <!-- Dynamically calculated line numbers -->
+              </div>
+
+              <!-- Center: Editor File Content -->
+              <div class="editor-code-container" id="editor-code-container">
+                <pre class="code-output" id="code-output"><code id="code-content"></code></pre>
+              </div>
+
+              <!-- Right: Rich Render Preview Panel (visual view of markdown / json grids / timeline / forms) -->
+              <div class="editor-preview-container hidden" id="editor-preview-container">
+                <!-- Rendered UI widgets go here -->
+              </div>
+              
+              <!-- Blank State (if no file is open) -->
+              <div class="editor-blank-state hidden" id="editor-blank-state">
+                <div class="blank-logo">
+                  <svg viewBox="0 0 24 24" width="100" height="100">
+                    <path fill="#2c313c" d="M23.9 6.5l-3.3-3.3c-.2-.2-.6-.2-.8 0L12 11.1 5.3 4.4c-.2-.2-.6-.2-.8 0L1.2 7.7c-.2.2-.2.6 0 .8L6 12l-4.8 3.5c-.2.2-.2.6 0 .8l3.3 3.3c.2.2.6.2.8 0L12 12.9l6.7 6.7c.2.2.6.2.8 0l3.3-3.3c.2-.2.2-.6 0-.8L18 12l4.8-3.5c.2-.2.2-.6 0-.8z"/>
+                  </svg>
+                </div>
+                <h2>Akash Sahukara Portfolio</h2>
+                <div class="shortcuts-list">
+                  <div class="shortcut-item"><span class="key">Click Explorer File</span> <span class="action">to open details</span></div>
+                  <div class="shortcut-item"><span class="key">Toggle Preview</span> <span class="action">for Visual representation</span></div>
+                  <div class="shortcut-item"><span class="key">Type in Terminal</span> <span class="action">to interact with terminal commands</span></div>
+                  <div class="shortcut-item"><span class="key">theme [name]</span> <span class="action">in terminal to change design</span></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Resizer (Grip to drag) -->
+          <div class="panel-resizer" id="panel-resizer"></div>
+
+          <!-- Bottom Panels Group (Terminal/Output/Problems) -->
+          <div class="bottom-panel-group" id="bottom-panel-group">
+            
+            <div class="panel-tabs-bar">
+              <div class="panel-tabs">
+                <button class="panel-tab-btn" data-panel="problems">PROBLEMS <span class="problem-count">0</span></button>
+                <button class="panel-tab-btn active" data-panel="terminal">TERMINAL</button>
+                <button class="panel-tab-btn" data-panel="output">OUTPUT</button>
+                <button class="panel-tab-btn" data-panel="debug">DEBUG CONSOLE</button>
+              </div>
+              <div class="panel-actions">
+                <button title="Toggle Size" id="terminal-maximize-btn"><i class="fa-solid fa-chevron-up"></i></button>
+                <button title="Clear Terminal" id="terminal-clear-btn"><i class="fa-solid fa-ban"></i></button>
+                <button title="Close Panel" id="terminal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+            </div>
+
+            <!-- Terminal Area -->
+            <div class="panel-content" id="panel-content">
+              <div class="terminal-wrapper" id="terminal-container">
+                <div class="terminal-history" id="terminal-history">
+                  <!-- Previous commands and outputs will append here -->
+                  <div class="terminal-line system-welcome">
+                    <div>Welcome to Akash Sahukara's Portfolio Terminal v1.4.0 (Windows PowerShell simulated bash)</div>
+                    <div>Type <span class="cmd-highlight">help</span> to view all available commands or click files in explorer above.</div>
+                    <br>
+                    <pre class="ascii-art">
+  █████╗ ██╗  ██╗ █████╗ ███████╗██╗  ██╗
+ ██╔══██╗██║  ██║██╔══██╗██╔════╝██║  ██║
+ ███████║███████║███████║███████╗███████║
+ ██╔══██║██╔══██║██╔══██║╚════██║██╔══██║
+ ██║  ██║██║  ██║██║  ██║███████║██║  ██║
+ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
+                    </pre>
+                  </div>
+                </div>
+                <div class="terminal-input-line">
+                  <span class="terminal-prompt" id="terminal-prompt">guest@akash-pc:~$</span>
+                  <div class="input-wrapper">
+                    <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false" aria-label="Terminal Input">
+                    <span class="custom-cursor"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+      </main>
+
+      <!-- 3. Status Bar -->
+      <footer class="window-statusbar">
+        <div class="status-left">
+          <a class="status-item branch" href="https://github.com/akashsahukra" target="_blank" title="GitHub Profile">
+            <i class="fa-solid fa-code-branch"></i>
+            <span>main</span>
+          </a>
+          <div class="status-item sync" title="Synchronized with Remote Repo">
+            <i class="fa-solid fa-arrows-rotate"></i>
+          </div>
+          <div class="status-item status-errors" title="No Errors or Warnings">
+            <i class="fa-solid fa-circle-xmark"></i> <span>0</span>
+            <i class="fa-solid fa-triangle-exclamation"></i> <span>0</span>
+          </div>
+          <div class="status-item status-message hide-mobile">
+            <i class="fa-solid fa-code"></i>
+            <span>Rakuten Senior Software Engineer</span>
+          </div>
+        </div>
+        
+        <div class="status-right">
+          <div class="status-item select-theme hide-mobile">
+            <span>Theme: </span><select id="theme-selector" class="statusbar-select" aria-label="Select Theme">
+              <option value="dracula">Dracula</option>
+              <option value="onedark">One Dark Pro</option>
+              <option value="monokai">Monokai</option>
+              <option value="matrix">Matrix Terminal</option>
+              <option value="cyberpunk">Cyberpunk Neon</option>
+            </select>
+          </div>
+          <div class="status-item hide-mobile">Ln <span id="status-line">1</span>, Col <span id="status-col">1</span></div>
+          <div class="status-item hide-mobile">Spaces: 2</div>
+          <div class="status-item hide-mobile">UTF-8</div>
+          <div class="status-item file-lang" id="status-lang">Markdown</div>
+          <a class="status-item social-link" href="https://linkedin.com/in/akashsahukara" target="_blank" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
+          <a class="status-item social-link" href="mailto:akashsahukara@gmail.com" title="Email Akash"><i class="fa-solid fa-envelope"></i></a>
+          <div class="status-item bell" title="No Notifications"><i class="fa-regular fa-bell"></i></div>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- Background settings modal (hidden by default) -->
+    <div class="settings-modal hidden" id="settings-modal">
+      <div class="settings-dialog">
+        <div class="settings-header">
+          <h3>Settings</h3>
+          <button id="settings-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="settings-body">
+          <div class="settings-group">
+            <label for="setting-fontsize">Font Size</label>
+            <select id="setting-fontsize">
+              <option value="12px">12px (Small)</option>
+              <option value="14px" selected>14px (Medium)</option>
+              <option value="16px">16px (Large)</option>
+              <option value="18px">18px (Extra Large)</option>
+            </select>
+          </div>
+          <div class="settings-group">
+            <label for="setting-terminal-height">Default Terminal Height</label>
+            <select id="setting-terminal-height">
+              <option value="150px">150px (Small)</option>
+              <option value="250px" selected>250px (Medium)</option>
+              <option value="400px">400px (Large)</option>
+            </select>
+          </div>
+          <div class="settings-group">
+            <label for="setting-visual-mode">Default Open Mode</label>
+            <select id="setting-visual-mode">
+              <option value="preview" selected>Visual Preview</option>
+              <option value="code">Raw Code</option>
+            </select>
+          </div>
+          <div class="settings-group">
+            <button id="settings-reset" class="btn btn-secondary">Reset to Defaults</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
